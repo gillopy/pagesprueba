@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><meta name="generator" content="Astro v5.5.2"><title>Guillermo Cabrera | Data Scientist</title><link rel="stylesheet" href="/_astro/index.BYNNFyBM.css"></head> <body> <section id="project-details" class="project-details"> <div class="back-button"> <a href="javascript:history.back()" class="btn btn-secondary">Atrás</a> </div> <div class="container">  <h2 class="section-title">Análisis de Demanda Eléctrica ANDE</h2> <div class="project-details-content"> <div class="project-image"> <img src="/project/project2.jpg" alt="Análisis de Demanda Eléctrica ANDE" loading="eager" width="600" height="400" decoding="async" class="project-img"> </div> <div class="project-info"> <h3>Descripción</h3> <p>Sistema de visualización y análisis de patrones de consumo eléctrico con comparativas históricas</p> <h3>Detalles</h3> <p>Plataforma completa para análisis energético con:
+- Carga automatizada de datos desde Excel
+- Procesamiento estadístico de series temporales
+- Visualizaciones interactivas con marcadores estacionales
+- Sistema de pruebas automatizadas
+- Gestión de dependencias con uv
+- Generación de reportes gráficos profesionales</p> <h3>Tecnologías Utilizadas</h3> <div class="project-technologies"> <span class="technology">Python 3.13</span><span class="technology">Pandas</span><span class="technology">Matplotlib</span><span class="technology">Seaborn</span><span class="technology">Openpyxl</span><span class="technology">Pytest</span><span class="technology">uv</span> </div>   <h3>Detalles Técnicos</h3> <div class="technical-details"> <div key="0" class="code-snippet"> <h4>Carga de Datos desde Excel</h4> <pre>            <code>class DataLoader:
+    @staticmethod
+    def load_data(file_path):
+        df = pd.read_excel(file_path)
+        return df[[&#39;Año&#39;, &#39;Enero&#39;, &#39;Febrero&#39;, ..., &#39;Diciembre&#39;]]</code>
+          </pre> <div class="additional-image-container"> <img src="/project/project2-extra1.jpg" alt="Imagen técnica - Carga de Datos desde Excel" loading="lazy" width="600" height="400" decoding="async" class="additional-image"> </div> </div><div key="1" class="code-snippet"> <h4>Procesamiento de Datos</h4> <pre>            <code>def _process_data(self):
+    self.df_melted = pd.melt(self.data, id_vars=&#39;Año&#39;,
+        var_name=&#39;Mes&#39;, value_name=&#39;KWh&#39;)
+    self.annual_stats = self.df_melted.groupby(&#39;Año&#39;)[&#39;KWh&#39;].mean().to_dict()</code>
+          </pre> <div class="additional-image-container"> <img src="/project/project2-extra2.jpg" alt="Imagen técnica - Procesamiento de Datos" loading="lazy" width="600" height="400" decoding="async" class="additional-image"> </div> </div><div key="2" class="code-snippet"> <h4>Visualización de Datos</h4> <pre>            <code>sns.relplot(data=df_melted, x=&#39;Mes&#39;, y=&#39;KWh&#39;, col=&#39;Año&#39;,
+    kind=&#39;line&#39;, palette=&#39;crest&#39;, col_wrap=3, aspect=2)</code>
+          </pre> <div class="additional-image-container"> <img src="/project/project2-extra3.jpg" alt="Imagen técnica - Visualización de Datos" loading="lazy" width="600" height="400" decoding="async" class="additional-image"> </div> </div><div key="3" class="code-snippet"> <h4>Pruebas Unitarias</h4> <pre>            <code>def test_load_data_success():
+    df = DataLoader.load_data(&#39;data/demanda2.xlsx&#39;)
+    assert isinstance(df, pd.DataFrame)
+    assert not df.empty</code>
+          </pre>  </div><div key="4" class="code-snippet"> <h4>Configuración de Dependencias</h4> <pre>            <code>[tool.uv]
+dependencies = [
+    &quot;matplotlib&gt;=3.10.1&quot;,
+    &quot;pandas&gt;=2.2.3&quot;,
+    &quot;seaborn&gt;=0.13.2&quot;
+]</code>
+          </pre>  </div> </div>    <h3>Descargas</h3> <div class="download-links"> <a href="https://github.com/gillopy/demanda_de_potencia_max_ande_deployment_uv" class="btn btn-primary" download>
+Descargar PDF
+</a> <a href="https://github.com/gillopy/demanda_de_potencia_max_ande_deployment_uv" class="btn btn-outline" download>
+Descargar IPython Notebook
+</a> </div>  <div class="project-links"> <a href="https://github.com/gillopy/demanda_de_potencia_max_ande_deployment_uv" class="btn btn-primary">Ver Demo</a> <a href="https://github.com/gillopy/demanda_de_potencia_max_ande_deployment_uv" class="btn btn-outline">Ver en GitHub</a> </div> </div> </div>  </div> </section> </body></html>

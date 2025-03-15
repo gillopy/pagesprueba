@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><meta name="generator" content="Astro v5.5.2"><title>Guillermo Cabrera | Data Scientist</title><link rel="stylesheet" href="/_astro/index.BYNNFyBM.css"></head> <body> <section id="project-details" class="project-details"> <div class="back-button"> <a href="javascript:history.back()" class="btn btn-secondary">Atrás</a> </div> <div class="container">  <h2 class="section-title">Sistema de Predicción de Enfermedades Cardíacas</h2> <div class="project-details-content"> <div class="project-image"> <img src="/project/project1.jpg" alt="Sistema de Predicción de Enfermedades Cardíacas" loading="eager" width="600" height="400" decoding="async" class="project-img"> </div> <div class="project-info"> <h3>Descripción</h3> <p>Pipeline completo de machine learning para predecir riesgo cardíaco usando XGBoost, con despliegue en Docker y versionado de modelos</p> <h3>Detalles</h3> <p>Implementación completa de machine learning con procesamiento robusto de datos y gestión de modelos. Características principales:
+- Pipeline automatizado de datos que maneja valores faltantes y escalado de características
+- División estratificada de datos con balanceo de clases
+- Seguimiento de rendimiento del modelo (Precisión, Recall, AUC-ROC)
+- Despliegue Dockerizado con gestión de dependencias Poetry
+- Versionado automático de modelos con serialización timestamp
+- Métricas de evaluación comprehensivas y reproductibilidad</p> <h3>Tecnologías Utilizadas</h3> <div class="project-technologies"> <span class="technology">Python 3.10</span><span class="technology">XGBoost</span><span class="technology">Scikit-learn</span><span class="technology">Pandas</span><span class="technology">Joblib</span><span class="technology">Docker</span><span class="technology">Poetry</span> </div>   <h3>Detalles Técnicos</h3> <div class="technical-details"> <div key="0" class="code-snippet"> <h4>Preprocesamiento de Datos</h4> <pre>            <code>def process_data(df: pd.DataFrame, columns_to_impute: list):
+    # Handle missing values and prepare features
+    df[columns_to_impute] = df[columns_to_impute].replace(0, np.nan)
+    return df.drop(columns=&#39;num&#39;), df[&#39;num&#39;]</code>
+          </pre> <div class="additional-image-container"> <img src="/project/project1-extra1.jpg" alt="Imagen técnica - Preprocesamiento de Datos" loading="lazy" width="600" height="400" decoding="async" class="additional-image"> </div> </div><div key="1" class="code-snippet"> <h4>División Estratificada de Datos</h4> <pre>            <code>X_train, X_test, y_train, y_test = train_test_split(
+    X, y, 
+    test_size=0.2, 
+    stratify=y,
+    random_state=42
+)</code>
+          </pre> <div class="additional-image-container"> <img src="/project/project1-extra2.jpg" alt="Imagen técnica - División Estratificada de Datos" loading="lazy" width="600" height="400" decoding="async" class="additional-image"> </div> </div><div key="2" class="code-snippet"> <h4>Entrenamiento del Modelo XGBoost</h4> <pre>            <code>model = XGBClassifier(
+    objective=&#39;binary:logistic&#39;,
+    max_depth=2,
+    n_estimators=300,
+    learning_rate=0.1
+)
+model.fit(X_train, y_train)</code>
+          </pre> <div class="additional-image-container"> <img src="/project/project1-extra3.jpg" alt="Imagen técnica - Entrenamiento del Modelo XGBoost" loading="lazy" width="600" height="400" decoding="async" class="additional-image"> </div> </div><div key="3" class="code-snippet"> <h4>Evaluación del Modelo</h4> <pre>            <code>y_pred = model.predict(X_test)
+y_proba = model.predict_proba(X_test)[:, 1]
+print(f&#39;AUC: {roc_auc_score(y_test, y_proba):.2f}&#39;)</code>
+          </pre> <div class="additional-image-container"> <img src="/project/project1-extra4.jpg" alt="Imagen técnica - Evaluación del Modelo" loading="lazy" width="600" height="400" decoding="async" class="additional-image"> </div> </div><div key="4" class="code-snippet"> <h4>Versionado de Modelos</h4> <pre>            <code>def save_model(model, path):
+    timestamp = datetime.now().strftime(&#39;%Y-%m-%d&#39;)
+    joblib.dump(model, f&#39;{path}_{timestamp}.joblib&#39;)</code>
+          </pre>  </div> </div>    <h3>Descargas</h3> <div class="download-links"> <a href="https://github.com/gillopy/Deployment_XGBoost_Heart_Disease_UCI" class="btn btn-primary" download>
+Descargar PDF
+</a> <a href="https://github.com/gillopy/Deployment_XGBoost_Heart_Disease_UCI" class="btn btn-outline" download>
+Descargar IPython Notebook
+</a> </div>  <div class="project-links"> <a href="https://github.com/gillopy/Deployment_XGBoost_Heart_Disease_UCI" class="btn btn-primary">Ver Demo</a> <a href="https://github.com/gillopy/Deployment_XGBoost_Heart_Disease_UCI" class="btn btn-outline">Ver en GitHub</a> </div> </div> </div>  </div> </section> </body></html>
